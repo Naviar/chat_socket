@@ -1,0 +1,100 @@
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+body {
+    background: #00598a;
+    background: linear-gradient(to right, #00598a, #00598a);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card-title {
+    margin-bottom: 2rem;
+    font-weight: 400px;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card-body {
+    padding: 2rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#btnLogin {
+    background-color: #00598a;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#btnRegister {
+    background-color: grey;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#btn {
+    font-size: 1rem;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#input {
+    height: auto;
+    border-radius: 2rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.separador {
+    padding-top: 114px;
+    padding-bottom: 114px;
+}
+
+.centrar {
+    margin: 0 auto;
+}

@@ -1,0 +1,18 @@
+<br>
+<div class="row">
+    <h1>Usuario: <small>{{wsService.usuario.nombre}}</small></h1>
+    <button style="margin-left: 800px" (click)="salir()" class="btn btn-danger">Salir</button>
+
+</div>
+
+<hr>
+
+<div class="row">
+    <div *ngIf="this.wsService.usuario.id_rol===1" class="col-5">
+        <app-listausuarios></app-listausuarios>
+    </div>
+
+    <div class="col-4">
+        <app-chat></app-chat>
+    </div>
+</div>

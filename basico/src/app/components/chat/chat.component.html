@@ -1,0 +1,67 @@
+<!-- <i class="fa fa-sync fa-spin fa-10x"></i> -->
+
+<div class="chat-window">
+    <div *ngIf="this.wsService.usuario.id_rol == 1 && this.chatService.mensajePrivado.ID_USER_ID_DESTINATION !== null" style="text-align: right">
+        <button (click)="liberarUsuario();" class="btn btn-outline-danger">Liberar</button>
+    </div>
+    <h3 *ngIf="this.wsService.usuario.atendido == 'atendido'" style="color: rgb(22, 113, 218)">Chat con : &nbsp;{{this.chatService.mensajePrivado.Nombre_destination}}</h3>
+    <hr style="border-width: 2px; background-color:#4080ff">
+    <form (ngSubmit)="enviar_mensaje()">
+        <div class="div app-mensajes" id="app-mensajes">
+            <div *ngIf="this.chatService.loadingMensajes" class="col text-center" style="margin-top: 80px">
+                <i style="color: blue" class="fas fa-spinner fa-spin fa-5x"></i>
+            </div>
+
+            <div class="div" *ngIf="!this.chatService.loadingMensajes && this.wsService.usuario.atendido == 'atendido'">
+                <div class="div" *ngFor="let msg of this.chatService.mensajes">
+                    <div *ngIf="msg.ID_USER_ID_ORIGIN === this.wsService.usuario.id_user" class="text-right">
+
+                        <span style="font-size: 16px" class="badge badge-pill badge-success">{{msg.NOMBRE_ORIGIN}} :</span>
+                        <br>
+                        <span class="badge badge-light">
+                        <p style="font-size: 16px">{{msg.MENSAJE}}
+                            <br>
+                            <small style="font-size: 10px;" class="text-muted">{{msg.FECHA |date:"short"}}</small>
+                        </p>
+                    </span>
+                        <br>
+                    </div>
+
+                    <div *ngIf="msg.ID_USER_ID_ORIGIN === this.chatService.mensajePrivado.ID_USER_ID_DESTINATION" class="text-left">
+
+                        <span style="font-size: 16px" class="badge badge-pill badge-primary">{{msg.NOMBRE_ORIGIN}} :</span>
+                        <br>
+                        <span class="badge badge-light">
+                        <p style="font-size: 16px">{{msg.MENSAJE}}
+                            <br>
+                            <small style="font-size: 10px" class="text-muted">{{msg.FECHA |date:"short"}}</small>
+                        </p>
+                    </span>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px" *ngIf="this.wsService.usuario.atendido == 'sin-atender'">
+
+                Por favor espera ,
+                <p>Un asesor te atendera pronto...</p>
+                <i class="fas fa-spinner fa-pulse fa-3x"></i>
+
+
+            </div>
+
+        </div>
+
+        <div class="input-group">
+            <input class="chat-input form-control" type="text" name="mensaje" [(ngModel)]="mensaje" placeholder="Escribir Mensaje..." autocomplete="off">
+
+
+            <span class="input-group-btn">
+            <button (click)="enviar_mensaje();" style="margin-top: 10px" class="btn btn-outline-primary" type="button"><i class="far fa-paper-plane"></i></button>
+        </span>
+        </div>
+
+        <!-- <textarea type='text' placeholder="Enviar Mensaje a {{this.chatService.mensajePrivado.Nombre_destination}}..." autocomplete="off"  [(ngModel)]="mensaje" class="chat-input form-control" name="texto" id="" cols="30" rows="1"></textarea> -->
+    </form>
+</div>

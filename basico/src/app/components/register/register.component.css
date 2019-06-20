@@ -1,0 +1,100 @@
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+body {
+    background: #00598a;
+    background: linear-gradient(to right, #00598a, #00598a);
+}
+
+.card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    margin-bottom: 2rem;
+    font-weight: 400px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+#btnBack {
+    font-size: 1rem;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    background-color: grey;
+    color: white;
+}
+
+#btnRegister {
+    font-size: 1rem;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+    background-color: #0ab4f7;
+    color: white;
+}
+
+#input {
+    height: auto;
+    border-radius: 2rem;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+mat-form-field {
+    padding: 10px;
+    width: 100%
+}
+
+.separador {
+    padding-top: 114px;
+    padding-bottom: 114px;
+}
+
+.centrar {
+    margin: 0 auto;
+}
+
+#select {
+    border-radius: .5rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#lbl {
+    color: red;
+}
+
+#select {
+    border-radius: .5rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

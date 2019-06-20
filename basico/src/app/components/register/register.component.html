@@ -1,0 +1,93 @@
+<body>
+    <div class="container separador">
+        <div class="row justify-content-center">
+            <div class="card" style="width: 500px">
+                <div class="card-body">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgz1HO04ik0X2CfHRtytya4yOq0r4HiQHUBB52CoSk75tabXq" class="img-fluid" alt="Responsive image">
+                    <br><br>
+                    <h5 class="card-title">Registro</h5>
+                    <form [formGroup]="registerForm" novalidate>
+
+                        <!-- SECCION PARA EL NOMBRE -->
+                        <div class="form-label-group">
+                            <label for="ejemplo">Nombre*</label>
+                            <input type="text" class="form-control" name="nombre_usuario" placeholder="Ingrese su nombre" autofocus required formControlName="nombre_usuario">
+                            <div *ngIf="registerForm.get('nombre_usuario').errors" class="alert alert-danger">
+                                <div *ngIf="registerForm.get('nombre_usuario').errors['required']">
+                                    Nombre requerido
+                                </div>
+                                <div *ngIf="registerForm.get('nombre_usuario').errors['pattern']">
+                                    Nombre incorrecto
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECCION PARA EL APELLIDO -->
+                        <div class="form-label-group">
+                            <label for="ejemplo">Apellido*</label>
+                            <input type="text" class="form-control" name="apellido_usuario" placeholder="Ingrese su apellido" required formControlName="apellido_usuario">
+                            <div *ngIf="registerForm.get('apellido_usuario').errors" class="alert alert-danger">
+                                <div *ngIf="registerForm.get('apellido_usuario').errors['required']">
+                                    Apellido requerido
+                                </div>
+                                <div *ngIf="registerForm.get('apellido_usuario').errors['pattern']">
+                                    Apellido incorrecto
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- SECCION PARA EL CORREO -->
+                        <div class="form-label-group">
+                            <label for="ejemplo">Correo*</label>
+                            <input type="email" class="form-control" name="correo" formControlName="correo" placeholder="Ingrese su correo" required>
+                            <div *ngIf="registerForm.get('correo').errors" class="alert alert-danger">
+                                <div *ngIf="registerForm.get('correo').errors['required']">
+                                    Email requerido
+                                </div>
+                                <div *ngIf="registerForm.get('correo').errors['pattern']">
+                                    Email incorrecto
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECCION PARA LA CONTRASEÑA -->
+                        <div class="form-label-group">
+                            <label for="ejemplo">Contraseña*</label>
+                            <input type="password" class="form-control" name="password" placeholder="Ingrese una contraseña" required formControlName="password">
+                            <div *ngIf="registerForm.get('password').errors" class="alert alert-danger">
+                                <div *ngIf="registerForm.get('password').errors['required']">
+                                    Password requerido
+                                </div>
+                                <div *ngIf="registerForm.get('password').errors['minlength']">
+                                    Password inseguro
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ROL -->
+
+                        <!-- <div class="form-label-group">
+                            <label><label id="lbl"></label>Rol*</label>
+                            <select id="select" class="form-control" name="rol" formControlName="rol" #selectRol> 
+                                    <option value="" disabled>Seleccione su rol</option>
+                                    <option *ngFor="let rol of _loginService.roles" value={{rol.ID_ROL}}>
+                                      {{rol.NOMBRE_ROL}}
+                                    </option>
+                                  </select>
+                            <div *ngIf="registerForm.get('rol').errors" class="alert alert-danger">
+                                <div *ngIf="registerForm.get('rol').errors['required']">
+                                    Rol requerido
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- ----------------------------------- -->
+                        <div class="form-label-group">
+                            <button [disabled]="!registerForm.valid" (click)="Registrar(registerForm)" class="btn btn-block" id="btnRegister" type="button">Registrarse</button>
+                            <button [routerLink]="['/LoginApp']" class="btn btn-block" id="btnBack" type="button">Volver</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

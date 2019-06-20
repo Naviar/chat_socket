@@ -1,0 +1,4 @@
+--Para tabla Rol
+INSERT INTO Rol VALUES (1,'Asesor');
+INSERT INTO Rol VALUES (2,'Cliente');
+SELECT * FROM Rol;

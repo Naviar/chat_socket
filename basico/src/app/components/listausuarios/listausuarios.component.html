@@ -1,0 +1,112 @@
+<!-- <h1 style="color: blue">Usuarios conectados</h1>
+<hr> -->
+<!-- <ul class="list-group" *ngFor="let usuario of usuariosActivosObs | async">
+    <li *ngIf="usuario.id != this.wsService.usuario.id_usuario" class="list-group-item">
+        {{usuario.nombre}}
+        <span class="badge badge-primary">
+    {{usuario.sala}}
+  </span>
+        <br>
+        <span class="badge badge-success">
+    {{usuario.id}}
+  </span>
+
+
+        <button style="float: right ;" class="btn btn-outline-info" (click)=confDestino(usuario.id,usuario.nombre)>
+
+         
+            <i  class="fas fa-comment-alt"></i>
+          </button>
+
+
+    </li>
+</ul> -->
+
+<!-- FUNCIONA -->
+
+<!-- <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+    <table class="table table-bordered table-striped mb-0">
+        <thead>
+            <tr>
+                <th scope="col">Nombre </th>
+                <th scope="col">Estado</th>
+                <th scope="col">iS</th>
+                <th scope="col">Chat</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let usuario of usuariosActivosObs | async" [ngClass]="{ notificacion: this.verificarNotificacion(usuario.id_user) , parpadear: this.verificarNotificacion(usuario.id_user) ,
+            flashed: this.verificarNotificacion(usuario.id_user)}">
+            <tr *ngIf="usuario.id_user != this.wsService.usuario.id_user && (usuario.id_atencion === this.wsService.usuario.id_user || usuario.id_atencion === undefined)">
+                <th scope="row"><span class="online_icon"></span>{{usuario.nombre}}<span *ngIf="this.verificarNotificacion(usuario.id_user);" class="badge badge-light">&nbsp;{{this.contarNotificaciones(usuario.id_user)}}</span></th>
+                <td><span *ngIf="usuario.atendido === 'sin-atender'" class="badge badge-danger">
+                  {{usuario.atendido}}
+                </span>
+                    <span *ngIf="usuario.atendido === 'atendido'" class="badge badge-success">
+                    {{usuario.atendido}}
+                </span>
+                </td>
+                <td>{{usuario.id_socket}}</td>
+
+                <td>
+                    <button (click)=confDestino(usuario.id_socket,usuario.id_user,usuario.nombre) type="button" class="btn btn-outline-success">
+                        <i class="far fa-comments"></i>
+                      </button>
+                </td>
+            </tr>
+
+            
+
+        </tbody>
+    </table>
+
+</div> -->
+
+
+
+<div class="container">
+    <!-- contacts card -->
+    <div class="card card-default" id="card_contacts">
+        <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+            <ul class="list-group pull-down" id="contact-list">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <li class="efecto" style="background:lightblue; text-align: center">
+                        <label class="name lead">&nbsp; Usuarios Conectados</label>
+                    </li>
+                    <div *ngFor="let usuario of usuariosActivosObs | async">
+                        <li (click)=confDestino(usuario.id_socket,usuario.id_user,usuario.nombre) class="list-group-item efecto" [ngClass]="{ notificacion: this.verificarNotificacion(usuario.id_user) , parpadear: this.verificarNotificacion(usuario.id_user) ,
+                        flashed: this.verificarNotificacion(usuario.id_user)}" *ngIf="usuario.id_user != this.wsService.usuario.id_user && (usuario.id_atencion === this.wsService.usuario.id_user || usuario.id_atencion === undefined)">
+
+                            <div class="row w-100">
+                                <div class="col-12 col-sm-6 col-md-2 px-0">
+                                    <img src="https://image.flaticon.com/icons/png/128/64/64572.png" alt="ivan arango" class="rounded-circle mx-auto d-block img-fluid">
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+                                    <!-- <span class="fa fa-mobile fa-2x text-success float-right pulse" title="online now"></span> -->
+                                    <label class="name lead">{{usuario.nombre}}  <span *ngIf="this.verificarNotificacion(usuario.id_user);" class="badge badge-light">&nbsp;{{this.contarNotificaciones(usuario.id_user)}}</span></label>
+                                    <br>
+                                    <span class="fas fa-comments fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
+                                    <span class="text-muted">&nbsp;<span *ngIf="usuario.atendido === 'atendido'" class="badge badge-success">
+                                    {{usuario.atendido}}
+                                </span>
+                                    <span *ngIf="usuario.atendido === 'sin-atender'" class="badge badge-danger">
+                                    {{usuario.atendido}}
+                                </span>
+                                    </span>
+                                    <br>
+                                    <span class="fas fa-user-tag text-muted" data-toggle="tooltip" title="" data-original-title="(870) 288-4149"></span>
+                                    <span class="text-muted small">&nbsp;{{usuario.id_socket}}</span>
+
+
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+
+            </ul>
+            <!--/contacts list-->
+        </div>
+    </div>
+</div>

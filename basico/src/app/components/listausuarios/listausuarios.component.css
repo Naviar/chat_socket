@@ -1,0 +1,178 @@
+.my-custom-scrollbar {
+    position: relative;
+    height: 475px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.parpadear {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.flashed {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+}
+
+.notificacion {
+    background-color: rgba(12, 95, 248, 0.726);
+}
+
+
+/* bonito */
+
+.panel>.list-group .list-group-item:first-child {
+    border-top: 1px solid rgb(204, 204, 204);
+}
+
+@media (max-width: 767px) {
+    .visible-xs {
+        display: inline-block !important;
+    }
+    .block {
+        display: block !important;
+        width: 100%;
+        height: 1px !important;
+    }
+}
+
+#back-to-bootsnipp {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.c-search>.form-control {
+    border-radius: 0px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 1.3em;
+    padding: 12px 12px;
+    height: 44px;
+    outline: none !important;
+}
+
+.c-search>.form-control:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none;
+}
+
+.c-search>.input-group-btn .btn {
+    border-radius: 0px;
+    border-width: 0px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    height: 44px;
+}
+
+.c-list {
+    padding: 0px;
+    min-height: 44px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+
+ul.c-controls {
+    list-style: none;
+    margin: 0px;
+    min-height: 44px;
+}
+
+ul.c-controls li {
+    margin-top: 8px;
+    float: left;
+}
+
+ul.c-controls li a {
+    font-size: 1.7em;
+    padding: 11px 10px 6px;
+}
+
+ul.c-controls li a i {
+    min-width: 24px;
+    text-align: center;
+}
+
+ul.c-controls li a:hover {
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+.c-toggle {
+    font-size: 1.7em;
+}
+
+.name {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+.c-info {
+    padding: 5px 10px;
+    font-size: 1.25em;
+}
+
+
+/* .efecto {
+    border: 5px inset #dddddd;
+    background-color: #ffffff;
+} */
+
+.efecto {
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, .7), inset -2px -2px 3px rgba(0, 0, 0, .1), 2px 2px 10px rgba(0, 0, 0, .1);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    /* Bordes redondos */
+}
+
+.efecto-black {
+    border: 5px inset #3d3d3d;
+    background: rgb(105, 105, 105);
+    color: white;
+}
+
+.online_icon {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #4cd137;
+    border-radius: 50%;
+    bottom: 0.2em;
+    right: 0.4em;
+    border: 1.5px solid white;
+}
